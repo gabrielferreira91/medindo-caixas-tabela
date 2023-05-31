@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <!-- <meta http-equiv="refresh" content="0; url=https://medindocaixas.com.br"> -->
+    <!-- <link rel="canonical" href="https://medindocaixas.com.br" /> -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css"/>
+
+    <title>Medidor de Caixas</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Mono:wght@500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Flex:wght@400;700&display=swap" rel="stylesheet">
+    
+</head>
+<body>
+    <header>
+        <h1>Medidor de Caixas</h1>
+    </header>
+    <main>
+        <div class="container">
+
+            <p>
+                Selecione o tipo de Caixa
+            </p>
+            <select id="tiposDeCaixa">
+                <option value="maleta">Maleta</option>
+                <option value="maletaTTotal">Maleta T. Total</option>
+                <option value="maletaT030">Maleta T. 30</option>
+                <option value="maletaTInferior">Maleta T. Inferior</option>
+                <option value="envNormal">Envoltório Normal</option>
+                <option value="env1tampa">Envoltório 1 Tampa</option>
+                <option value="envT030">Envoltório Transp. 30</option>
+                <option value="tabuleiro">Tabuleiro/Chapa</option>
+            </select>
+            <p>
+                Digite as medidas das caixas em <strong class="milimetros">MILÍMETROS</strong>
+            </p>
+                <div class="medidasCaixas">
+                    <div class="medidas ">
+                        <p>
+                            Comprimento
+                        </p>
+                        <div class="containerInput">
+                            <input id="lengthBox" class="time" type="number" placeholder="Comprimento">
+                            <strong> X</strong>
+                        </div>
+                    </div>
+                    
+                    <div class="medidas ">
+                        <p>
+                            Largura
+                        </p>
+                        <div class="containerInput">
+                            <input id="widthBox" class="time" type="number" placeholder="Largura">
+                            <strong> X </strong>
+                        </div>
+                    </div>
+
+                    <div class="medidas ">
+                        <p>
+                            Altura
+                        </p>
+                        <div class="containerInput">
+                            <input id="heightBox" class="time" type="number" placeholder="Altura">
+                        </div>
+                    </div>
+                                    
+                </div>
+            <button class="calcBox buttonClass" id="calcBox" onclick='getMeasure()'>Calcular Medidas</button>
+            <div id="totalBox">
+                <strong id="totalLength">00</strong><strong>x</strong><strong id="totalWidth">00</strong>
+                <!-- <p>MEDIDAS DA CHAPA</p> -->
+            </div>      
+            <div id="totalValue">
+                <strong id="resultR">R$</strong><strong id="resultValue">0,00</strong>
+            </div>       
+            
+            <div class="valorCaixas">
+                <div class="valores">
+                    <p>
+                        Gramatura
+                    </p>
+                    <div class="containerInput">
+                        <input id="gramatura" type="number" placeholder="Ex: 400">
+                    </div>
+                </div>
+                <strong> X</strong>
+                <div class="valores">
+                    <p>
+                        Valor do KG
+                    </p>
+                    <div class="containerInput">
+                        <input id="valorKg" type="number" placeholder="9,00">
+                    </div>
+                </div>
+                <div class="valores">
+                    <div class="valorFinal">
+                        <button id="calcValor" class="calcValor buttonClass" onclick="getValues()" >Calcular Valor</button>
+                    </div>
+                </div>
+            </div>
+            <!-- INICIANDO A TABELA -->
+            <div class="initTabela">
+                <div class="medidasCaixas">
+                    <input type="text" id="boxName" placeholder="Caixa 01"/>
+                    <button id="addTable" class="buttonClass" onclick="handleCreateTable()" >Adicionar à Tabela</button>
+                </div>
+            </div>
+        </div>   
+        <div class="container">
+            <table id="tableBoxes">
+                <tr>
+                    <th>Nome da Caixa</th>
+                    <th>Medidas</th>
+                    <th>Gramatura (gr)</th>
+                    <th>Valor</th>
+                </tr>                
+            </table>
+        </div>
+    </main>
+
+    <footer>
+        <div>
+            <span class="developed">
+                <a href="https://gabrielferreira.dev.br">
+                Desenvolvido por:
+                <p>
+                    Gabriel Ferreira
+                </p>
+                </a>
+            <span>
+        </div>
+    </footer>
+    <script src="./medindoCaixas.js"></script>
+</body>
+</html>

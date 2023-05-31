@@ -1,0 +1,273 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-size: 62.5%; /* 1rem = 10px */
+}
+
+body {
+  font-family: 'Roboto Flex', sans-serif;
+  background: #212121;
+  color: #ddd;
+
+  font-size: 1.6rem;
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 1.5rem;
+}
+
+main {
+  margin: 1rem;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+
+  padding: 2rem;
+
+  background: #d2eaf070;
+
+  width: 38rem;
+
+  font-weight: 600;
+
+  color: #212121;
+
+  border: 0.2rem #ddd solid;
+  border-radius: 2.5rem;
+}
+
+.container p {
+  line-height: 2rem;
+}
+
+.milimetros {
+  color: black;
+}
+
+select {
+  margin: 1rem;
+  padding: 0.5rem;
+  border-radius: 1rem;
+}
+
+.medidasCaixas {
+  margin-top: 1.5rem;
+  display: flex;
+  /*gap: 3.8rem;*/
+  gap: 0.5rem;
+}
+
+.medidas {
+  display: flex;
+  flex-direction: column;
+}
+
+.medidas p {
+  margin-bottom: 1rem;
+}
+
+/* =====> CONFIG INPUT <====== */
+
+input {
+  line-height: 2.7rem;
+  width: 9rem;
+  text-align: center;
+
+  border-radius: 0.7rem;
+  border: none;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type='number'] {
+  -moz-appearance: textfield;
+}
+
+/* ========> CONFIG BUTTON <===========*/
+
+.calcBox {
+  margin: 2rem 0 1rem;
+  padding: 1rem;
+}
+
+.buttonClass:hover {
+  background: #03aaf7;
+}
+
+.calcValor{
+  margin-left: 1.5rem;
+}
+
+.buttonClass {
+  background: #67d7f7;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #212121;
+
+  border: none;
+  border-radius: 1.5rem;
+
+  text-transform: uppercase;
+  font-weight: 700;
+
+  transition: background 500ms;
+}
+
+/* ========> TIME TOTAL <==============  */
+
+#totalBox strong {
+  font-size: 3rem;
+  letter-spacing: 0.3rem;
+}
+
+.valores input {
+  padding-left: 1rem;
+  text-align: left;
+}
+
+#totalLength {
+  margin-right: 0.5rem;
+}
+
+#totalWidth {
+  margin-left: 0.5rem;
+}
+
+.valorCaixas {
+  margin-top: 1rem;
+  display: flex;
+  gap: 0.5rem;
+}
+
+.valorCaixas p {
+  padding-bottom: 0.5rem;
+}
+
+.valorCaixas strong {
+  align-self: flex-end;
+  padding-bottom: 0.5rem;
+}
+
+
+
+#addTable {
+  margin-top: 2rem;
+}
+
+#totalValue {
+  margin-top: 0.8rem;
+  font-size: 3.2rem;
+  letter-spacing: 0.3rem;
+}
+
+#resultValue {
+  margin-left: 1rem;
+}
+
+.disabled {
+  background-color: rgb(190, 190, 190);
+  color: #444;
+  transition: none;
+}
+
+.disabled:hover {
+  background-color: rgb(190, 190, 190);
+  transition: none;
+}
+
+/* ====> TABLE  <===== */
+table {
+
+}
+
+td {
+  font-weight: 400;
+
+}
+
+
+
+/* ====> FOOTER <====== */
+footer {
+  display: flex;
+
+  position: relative;
+  align-self: flex-end;
+
+  height: 18vh;
+}
+
+footer div {
+  position: relative;
+  align-self: flex-end;
+
+  margin: 1.5rem;
+  padding: 1.3rem;
+  width: 20rem;
+
+  /* border: 3px solid #73AD21;*/
+  border-radius: 2rem;
+
+  background: #212121;
+}
+
+footer div:before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: #fff;
+  z-index: -1;
+
+  border-radius: 2rem;
+}
+
+footer div:after {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: #fff;
+  z-index: -2;
+  filter: blur(1rem);
+
+  border-radius: 2rem;
+}
+
+footer div:before,
+footer div:after {
+  background: linear-gradient(210deg, #89ff00, #212121, #00bcd4);
+}
+
+.developed a{
+  text-decoration: none;
+  color: #fff;
+}
