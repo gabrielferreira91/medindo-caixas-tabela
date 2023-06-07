@@ -43,9 +43,45 @@ function handleCreateTable() {
   setTableValues()
 }
 
+function tipoDePapelao(gram){
+  if (gram < 2){
+    gram = gram * 1000
+  }
+
+  let tipoPapelao = ''
+    let gramaturaPapelao = {
+    a: 'ONDA C',
+    b: 'ONDA C-2',
+    c: 'ONDA C Exportação',
+    d: 'TRIPLEX',
+    e: 'TRIPLEX-Exportação',
+    f: 'Acoplado',
+    g: 'Gr. Inexistente'
+  }
+
+  if (gram >= 300 & gram <= 400){
+    tipoPapelao = gramaturaPapelao.a
+  } else if (gram > 400 & gram < 480){
+    tipoPapelao = gramaturaPapelao.b      
+  } else if (gram >= 480 & gram < 560){
+    tipoPapelao = gramaturaPapelao.c      
+  } else if (gram >= 560 & gram < 720){
+    tipoPapelao = gramaturaPapelao.d      
+  } else if (gram >= 720 & gram < 1200){
+    tipoPapelao = gramaturaPapelao.e      
+  } else if (gram >= 1200 & gram < 1500){
+    tipoPapelao = gramaturaPapelao.f
+  } else {
+    tipoPapelao = gramaturaPapelao.g
+  }
+
+  return tipoPapelao
+}
+
+
 function setTableValues() {
   let nameMedidas = 0
-
+  
   if (isTabuleiro) {
     nameMedidas = inputLengthBox.value + ' X ' + inputWidthBox.value
   } else {
@@ -56,30 +92,32 @@ function setTableValues() {
     ' X ' +
     inputHeightBox.value
   }
-
+  
   let nameBox = inputBoxName.value
-  let nameGramatura = inputGramatura.value
+  let nameGramatura = tipoDePapelao(inputGramatura.value)
   let nameValor = 'R$ ' + totalValue.textContent
   let modeloCaixa = resultBox[2]
-
+  
   let newRow = tableField.insertRow(-1)
   let cellName = newRow.insertCell(0)
   let cellMedidas = newRow.insertCell(1)
   let cellModeloCaixa = newRow.insertCell(2)
   let cellGramatura = newRow.insertCell(3)
   let cellValor = newRow.insertCell(4)
-
+  
   let textName = document.createTextNode(nameBox)
   let textMedidas = document.createTextNode(nameMedidas)
   let textModeloCaixas = document.createTextNode(modeloCaixa)
   let textGramatura = document.createTextNode(nameGramatura)
   let textValor = document.createTextNode(nameValor)
+  
 
   cellName.appendChild(textName)
   cellMedidas.appendChild(textMedidas)
   cellModeloCaixa.appendChild(textModeloCaixas)
   cellGramatura.appendChild(textGramatura)
   cellValor.appendChild(textValor)
+
 }
 
 // Fim da parte da tabela
@@ -329,6 +367,8 @@ function getValues() {
 
   isInvalidValue ? msgErrorValue() : setValue(valorFinal)
 }
+
+// FUNCTION OF TABULEIRO
 
 function disableHeightWhenIsTabuleiro() {
   if (document.getElementById('tiposDeCaixa').value == 'tabuleiro') {

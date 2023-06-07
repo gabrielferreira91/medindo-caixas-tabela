@@ -112,7 +112,7 @@
             </div>
         </div>   
         <div id="containerTable">
-            <table id="tableBoxes">
+            <table id="tableBoxes" class="table">
                 <tr>
                     <th>Nome da Caixa</th>
                     <th>Medidas</th>
@@ -121,9 +121,10 @@
                     <th>Valor</th>
                 </tr>                
             </table>
-            <button class="exportButton buttonClass">
+            <button class="exportButton buttonClass" onclick="exportTableToExcel('tableBoxes', 'orçamento')">
                 <img src="export-icon.svg" alt="Export Icon">
-                Exportar Tabela para Excel</button>
+                Exportar Tabela para Excel
+            </button>
         </div>
     </main>
 
@@ -140,6 +141,9 @@
         </div>
     </footer>
     <script src="./medindoCaixas.js"></script>
+    <script src="./scriptExcel.js"></script> 
+
+    <!-- <script src="table2excel.js"></script>-->
 </script>
 
 </body>
